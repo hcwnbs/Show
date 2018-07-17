@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>试卷成绩识别和分析系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Roboto:300,400' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-4">
+
+                                <a href="/home"><h3>试卷成绩识别和分析系统</h3></a>
+
+						</div>
+						<div class="col-md-7">
+
+							<ul class="nav text-center">
+                                <li><a href="/home">主页</a></li>
+								<li><a href="/index"><span>上传文件</span></a></li>
+								<li><a href="/inside">数据展示</a></li>
+								<li class="active"><a href="/help">帮助</a></li>
+								<li><a href="/contact">历史记录/下载</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</nav>
+		  </div>
+		</header>
+
+<main id="main">
+			<div class="container">
+				<div class="col-md-8 col-md-offset-2 animate-box">
+
+						<div class="service">
+							<div class="service-icon">
+                            <h2>试卷分析的一些基本概念</h2>
+							</div>
+							<h4>难度</h4>
+                            <p><h5>所谓难度，强调的是测验的难度大小;而难度大小则可以通过难度系数大小的方式进行表达，难度系数是通过人数与测试总人数的比例大小，如果一份测验通过的人数越多，则难度系数越大，反之越小。因此，难度系数越大，测验本身的难度越小，难度系数越小，测验本身的难度越大，两者可以理解为相反的关系。</h5></p>
+                            <p><h5>根据高校课程考试的性质,我们定义难度值小于等于0.15的题目为容易;难度值在0.15至0.25之间的题目为偏易;难度值在0.25至0.45之间的题目为难度适中;难度值在0.45至0.65之间的题目为偏难;难度系数大于0.65的题目为难。一套试题需要有各个难度的题目,但难题的比例不能过大。</h5></p>
+                            <h4>区分度</h4>
+                            <p><h5>所谓区分度，强调的是对于被测试者的区分程度;简述可知就是成绩优者与劣者都进行区分的意识。通过选拔类的测验则需要高的区分度。区分度本身的高低则要充分考虑试卷的难度大小，难度越大、越小则区分度小;难度适中的时候区分度最高。</h5></p>
+                            <p><h5>根据高校课程考试的性质,我们定义区分度小于0.10的题目为区分度低,建议淘汰该题目并分析原因;区分度在0.15至0.25之间的题目为区分度较低,建议修改该题目;区分度在0.25至0.35之间的题目为区分度较高;区分度大于0.35的题目为区分度高</h5></p>
+                            <h4>未及率</h4>
+                            <p><h5>所谓未及率，强调的是该题目得零分与总人数之比，也就是零分率。如果一道题的未及率较高，需要考虑该知识点是否已经讲清楚。</h5></p>
+                            <p><h5>某题目得零分学生占所有考生的比例,称为该题目的未及率。未及率大于35%的题目建议修改,未及率大于50%的题目需要更换。</h5></p>
+						    <h4>效度</h4>
+                            <p><h5>所谓效度，强调是测验能够测查到被测试者的测验程度;相对于此可以理解为被测试者是否能够通过测验试卷将自身被测的内容测验出来，如果被测试者的自身要素可以通过测验的方式测查出来则表示效度高，反之效度低。测验中效度的指标是测验者需要首次考虑的测验指标，如果一份测验没有效度的话，则很难保证其有信度，所以需要充分考虑测评要素，全面衡量测评内容，才能够真正得出测查的结果。</h5></p>
+                            <p><h5>一般来说，对某次测试的效度进行检验时，除了要根据教学大纲的要求和观念有效性的理论对试卷的内容进行考查以外，还须采用计算相关系数的定量方法，即计算出本次试卷与另一份已被确定能正确反映受试者水平的试卷之间的相关系数。系数高则有效性大。课堂测试的效度应在0.4-0.7之间，规模较大的测试其效度应在0.7以上。</h5></p>
+						    <h4>信度</h4>
+                            <p><h5>所谓信度，强调的是多次测量结果的一致性和稳定性;对于测验而言，是对被测者实施多次测验，而每一次测验的结果是不是相同，如果存在相同的情况，则可释义为信度高;反之则信度低。信度的指标是测验者需要把握每一次测验题目本身的难度相当，如果两次测验难度不同的话，则会必然影响信度的高低问题。因此，把握信度的关键点在于测验结果是不是一样或者相同。</h5></p>
+                            <p><h5>一般来说，对某次测试的信度进行检验时，除了要根据教学大纲的要求和观念有效性的理论对试卷的内容进行考查以外，还须采用计算相关系数的定量方法，即计算出本次试卷与另一份已被确定能正确反映受试者水平的试卷之间的相关系数。系数高则有效性大。课堂测试的信度应在0.5-0.6，规模较大的测试其信度应在0.6以上。</h5></p>
+
+                        </div>
+					</div>
+				<!-- <div class="col-md-4"></div> -->
+			</div>
+		</main>
+	<!-- END: box-wrap -->
+	    <section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-command"></i>
+							</div>
+							<p>做更好的系统</p>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-drop2"></i>
+							</div>
+							<p>做更快的系统</p>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-anchor"></i>
+							</div>
+							<p>做更准确的系统</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </div>
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+

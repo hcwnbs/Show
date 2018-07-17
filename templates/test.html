@@ -1,0 +1,372 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>试卷识别和分析系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	
+
+  
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+
+    <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* css 代码  */
+        </style>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Roboto:300,400' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<script src="{% static 'js/respond.min.js' %}"></script>
+        <!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+
+	<![endif]-->
+
+	</head>
+	<body>
+	<div class="box-wrap">
+		<header role="banner" id="fh5co-header">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="row">
+						<div class="col-md-4">
+
+                                <a href="/home"><h3>试卷成绩识别和分析系统</h3></a>
+
+						</div>
+						<div class="col-md-7">
+
+							<ul class="nav text-center">
+                                <li><a href="/home">主页</a></li>
+								<li><a href="/index"><span>上传文件</span></a></li>
+								<li class="active"><a href="/inside">数据展示</a></li>
+								<li><a href="/help">帮助</a></li>
+								<li><a href="/contact">历史记录/下载</a></li>
+							</ul>
+						</div>
+
+					</div>
+				</nav>
+		  </div>
+		</header>
+		<!-- END: header -->
+<section id="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="intro animate-box">
+                        <h2>基础分析</h2>
+
+
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section id="intro">
+			<div class="container" align="center">
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+						<div class="intro animate-box">
+                            <table class="table table-bordered">
+                                <caption>试卷整体情况</caption>
+                                <thead>
+                                    <tr>
+                                        <td>及格率</td>
+                                        <td>及格人数</td>
+                                        <td>最高分</td>
+                                        <td>平均分</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                        <tr>
+                                            <td>{{ jigelv }}</td>
+                                            <td>{{ jige }}</td>
+                                            <td>{{ heigh }}</td>
+                                            <td>{{ balance }}</td>
+
+
+
+                                        </tr>
+
+                                </tbody>
+                            </table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section id="intro">
+			<div class="container" align="center">
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+						<div class="intro animate-box">
+                            <table class="table table-bordered">
+                                <caption>试卷各分段人数</caption>
+                                <thead>
+                                    <tr>
+                                        <td>60以下</td>
+                                        <td>60~70分段</td>
+                                        <td>70~80分段</td>
+                                        <td>80~90分段</td>
+                                        <td>90~100分段</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                        <tr>
+                                            <td>{{ eachnum.0 }}</td>
+                                            <td>{{ eachnum.1 }}</td>
+                                            <td>{{ eachnum.2 }}</td>
+                                            <td>{{ eachnum.3 }}</td>
+                                            <td>{{ eachnum.4 }}</td>
+
+                                        </tr>
+
+                                </tbody>
+                            </table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-command"></i>
+							</div>
+                            <div id="container2"  align="center"></div>
+                            <div id="container1"  align="center"></div>
+        <script>
+
+            var chart1 = Highcharts.chart('container1',{
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: '各大题分析'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            '第一大题','第二大题','第三大题'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        // head + 每个 point + footer 拼接成完整的 table
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: '难度',
+        data: [0.2, 0.35, 0.25]
+    }, {
+        name: '区分度',
+        data: [0.22, 0.33, 0.56]
+    }, {
+        name: '未及率',
+        data: [0.25, 0.23, 0.52]
+    }, {
+        name: '信度',
+        data: [0.22, 0.23, 0.44]
+    }, {
+        name: '效度',
+        data: [0.21, 0.56, 0.34]
+    }]
+});
+
+            var chart2 = Highcharts.chart('container2', {
+		title: {
+				text: '各分段人数占比'
+		},
+		tooltip: {
+				headerFormat: '{series.name}<br>',
+				pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+		},
+		plotOptions: {
+				pie: {
+						allowPointSelect: true,  // 可以被选择
+						cursor: 'pointer',       // 鼠标样式
+						dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+								style: {
+										color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+								}
+						}
+				}
+		},
+		series: [{
+				type: 'pie',
+				name: '各分段人数占比',
+				data: [
+						['60~70分段',   {{ each.1 }}],
+						['70~80分段',   {{ each.2 }}],
+						{
+								name: '60以下（不及格）',
+								y: {{ each.0 }},
+								sliced: true,  // 默认突出
+								selected: true // 默认选中
+						},
+						['80~90分段',    {{ each.3 }}],
+						['90~100分段',     {{ each.4 }}],
+				]
+		}]
+});
+        </script>
+							</div>
+					</div>
+
+
+				</div>
+			</div>
+		</section>
+
+<section id="intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="intro animate-box">
+                        <h2>深度分析</h2>
+                        <table class="table table-bordered">
+                            <caption>知识点相互之间的影响</caption>
+                                    <tr>
+                                        <td>知识点</td>
+                                        <td>影响的知识点</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for one in know %}
+                                        <tr>
+                                            <td>{{ one.0 }}</td>
+                                            <td>{{ one.1 }}</td>
+
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		
+
+            <section id="services">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-command"></i>
+							</div>
+							<p>做更好的系统</p>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-drop2"></i>
+							</div>
+							<p>做更快的系统</p>
+						</div>
+					</div>
+					<div class="col-md-4 animate-box">
+						<div class="service">
+							<div class="service-icon">
+								<i class="icon-anchor"></i>
+							</div>
+							<p>做更准确的系统</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </div>
+		
+
+	
+
+
+	</div>
+	<!-- END: box-wrap -->
+	
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+	<!-- Main JS (Do not remove) -->
+	<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
+
